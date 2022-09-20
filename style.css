@@ -1,0 +1,150 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(228, 66%, 53%); 
+  --second-color: hsl(25, 83%, 53%);
+  --title-color: hsl(228, 57%, 28%);
+  --text-color: hsl(228, 15%, 50%);
+  --body-color: #fff;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem; 
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {  
+}
+
+h1, h2, h3 { 
+}
+
+/*=============== THEME ===============*/
+
+
+/*========== Variables Dark theme ==========*/
+
+
+/*========== 
+    Color changes in some parts of 
+    the website, in dark theme 
+==========*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {  
+}
+
+.grid { 
+}
+
+.section {  
+}
+
+.section__title { 
+}
+
+
+/*=============== HEADER & NAV ===============*/
+
+
+/* Change background header */
+
+
+/* Active link */
+
+
+/*=============== HOME ===============*/
+
+
+/*=============== BUTTON ===============*/
+
+
+/*=============== LOGOS ===============*/
+
+
+/*=============== POPULAR ===============*/
+
+
+/* Swiper class */
+
+
+/*=============== VALUE ===============*/
+
+
+/*Rotate icon and add shadows*/
+
+
+/*=============== CONTACT ===============*/
+
+
+/*=============== SUBSCRIBE ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up*/
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 350px){
+}
+
+/* For medium devices */
+@media screen and (max-width: 576px){
+}
+
+/* For large devices */
+@media screen and (max-width: 1023px){    
+}
+
+/* For 2K & 4K resolutions */
+@media screen and (max-width: 2023px){    
+}
