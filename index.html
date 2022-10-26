@@ -5,35 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="prefetch" href="images/image-hero-mobile.png" as="image">
+  <link rel="prefetch" href="images/image-hero-desktop.png" as="image">
+
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 --> 
 </head>
 <body>
 
-  Features
-  Company
-  Careers
-  About
-
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <!--============= SCREEN BLACK =============-->
+  <div class="screen-black">
+    
   </div>
+
+  <!--============= HEADER =============-->
+  <header class="header">
+
+    <div class="header__container">
+
+      <div class="header__marca">
+        <img src="images/logo.svg" alt="snap" srcset="">
+      </div>
+
+      <div class="menu-icon open-menu">        
+        <img src="images/icon-menu.svg" alt="snap">        
+      </div>            
+      
+      <div class="menu">
+        
+        <div class="menu__head">
+
+          <div class="closer-icon close-menu">
+            <img src="images/icon-close-menu.svg" alt="close-menu">            
+          </div>
+
+        </div>
+
+        <div class="menu__main">
+
+          <details class="menu__items">
+            <summary>Features <img src="images/icon-arrow-down.svg" alt=""></summary>
+            <nav class="menu__colapse">
+              <a class="menu__link" href="#"><img src="images/icon-todo.svg" alt="todo-list"> Todo List</a>
+              <a class="menu__link" href="#"><img src="images/icon-calendar.svg" alt="calendar"> Calendar</a>
+              <a class="menu__link" href="#"><img src="images/icon-reminders.svg" alt="reminders"> Reminders</a>
+              <a class="menu__link" href="#"><img src="images/icon-planning.svg" alt="planning"> Planning</a>
+            </nav>
+          </details>
+
+
+          <details class="menu__items">
+            <summary>Company <img src="images/icon-arrow-down.svg" alt=""></summary>
+            <nav class="menu__colapse">
+              <a class="menu__link" href="#">History</a>
+              <a class="menu__link" href="#">Our Team</a>
+              <a class="menu__link" href="#">Blog</a>              
+            </nav>
+          </details>
+
+          <a class="menu__items" href="http://">Careers</a>
+
+          <a class="menu__items" href="http://">About</a>
+        
+        </div>
+
+        <div class="sing-up">
+          <a class="btn-login" href="#">Login</a>
+          <a class="btn-register" href="#">Register</a>
+        </div>
+        
+      </div>
+
+    </div>
+
+  </header>
+
+  <!--============= Hero =============-->
+  <section class="hero">
+
+    <div class="hero__container">
+      
+      <section class="hero__image">        
+        <picture>
+          <source srcset="images/image-hero-mobile.png" media="(max-width: 768px)">
+          <source srcset="images/image-hero-desktop.png" media="(min-width: 820px)">
+          <img src="images/image-hero-mobile.png" alt="MDN Web Docs">
+        </picture>
+      </section>  
+
+      <div class="hero__text">
+
+        <h1>Make remote work</h1>
+        <p>Get your team in sync, no matter your location. Streamline processes, 
+          create team rituals, and watch productivity soar.</p>        
+
+        <a href="#" class="btn-primary">Learn More</a>
+        
+        <div class="hero__client">
+          <img src="images/client-databiz.svg" alt="databiz">
+          <img src="images/client-audiophile.svg" alt="audiophile">
+          <img src="images/client-meet.svg" alt="meet">
+          <img src="images/client-maker.svg" alt="maker">
+        </div>
+
+      </div>    
+
+    </div>
+
+  </section>
+
+  <script src="main.js" defer></script>
+
 </body>
 </html>

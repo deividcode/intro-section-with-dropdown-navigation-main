@@ -1,44 +1,25 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("");
+/*=============== FONTS ===============*/
+
+@font-face{
+  font-family: "Epilogue";
+  src: url("/fonts/Epilogue-VariableFont_wght.ttf");
+}
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.5rem;
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(228, 66%, 53%); 
-  --second-color: hsl(25, 83%, 53%);
-  --title-color: hsl(228, 57%, 28%);
-  --text-color: hsl(228, 15%, 50%);
-  --body-color: #fff;
+  --almost-black: hsl(0, 0%, 8%);   
+  --almost-white:hsl(0, 0%, 98%);
+  --medium-gray: hsl(0, 0%, 41%);
 
   /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: 'Poppins', sans-serif;
-  --biggest-font-size: 2.25rem;
-  --h1-font-size: 1.5rem; 
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --body-font: 'Epilogue';
 
   /*========== Font weight ==========*/
   --font-medium: 500;
-  --font-semi-bold: 600;
-
-  /*========== z index ==========*/
-  --z-tooltip: 10;
-  --z-fixed: 100;
-}
-
-/* Responsive typography */
-@media screen and (min-width: 1024px) {
-  :root {
-    --biggest-font-size: 4rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-  }
+  --font-bold: 700;
 }
 
 /*=============== BASE ===============*/
@@ -52,99 +33,433 @@ html {
   scroll-behavior: smooth;
 }
 
-body {  
+h1{ 
+  font-size: clamp(1.8rem , calc(1.4rem + 1.5vw), 2.5rem);
+  margin-block-end: 0.34em;
+  font-family: var(--body-font);
+  
+  font-weight: var(--font-bold);
 }
 
-h1, h2, h3 { 
+p{
+  margin-block-end: 1em;
+
+  color: var(--medium-gray);
+  font-size: 0.85em;
+  font-family:  var(--body-font);  
+  font-weight: var(--font-medium);
+  line-height: 1.5;
 }
 
-/*=============== THEME ===============*/
-
-
-/*========== Variables Dark theme ==========*/
-
-
-/*========== 
-    Color changes in some parts of 
-    the website, in dark theme 
-==========*/
-
-
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {  
+a{
+  text-decoration: none;
+  color: #202020;
 }
 
-.grid { 
+img{
+  max-inline-size: 100%;  
 }
 
-.section {  
+ul{
+  list-style: none;
 }
 
-.section__title { 
+summary{
+  display:block;
 }
 
+summary:before{
+  content: '';
+  transform: rotate(25deg);
+}
+
+/* Responsive Base */
+@media screen and (min-width: 820px){  
+
+  h1{
+    font-size: clamp(2.6rem , calc(1rem + 3vw), 5.5rem);
+  }
+
+  p{
+    font-size: 1em;
+  }
+
+}
 
 /*=============== HEADER & NAV ===============*/
 
+.header__container{
+  display: flex;
+  align-items: center;
+  height:70px;
 
-/* Change background header */
+  padding:0 30px;
+}
 
+.menu-icon{
+  display: block;
+  width: 27px;
+}
 
-/* Active link */
+.menu__items{
+  font-family:  var(--body-font);
+  font-size: 0.9em; 
+  color: var(--medium-gray);
+  font-weight: 700; 
+}
 
+.menu__items:hover{
+  color: var(--almost-black);
+  cursor: default;
+}
 
-/*=============== HOME ===============*/
+.menu__link:hover{
+  color: var(--almost-black);
+}
 
+.menu__link > img{
+  margin-right: 0.5em;
+}
+
+details summary img{
+  transition: transform 0.3s;
+}
+
+details[open] > summary img{
+  transform: rotate(180deg);  
+}  
+
+.sing-up{
+  display: grid;
+  gap: 1em;
+  margin-top: 15px;
+}
+
+/*=============== HERO ===============*/
+
+.hero__image{
+  margin-block-end: 0.85em;
+}
+
+.hero__text{
+  text-align: center;
+  padding: 1.3em;
+}
+
+.hero__client{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: start;
+  align-items: center;
+
+  margin: 1.7em 0;
+}
+
+.hero__client > img{
+  width: 56px;
+  margin: 0 0.3em;
+}
 
 /*=============== BUTTON ===============*/
 
+.btn-primary{
+  display: inline-block;
 
-/*=============== LOGOS ===============*/
+  margin: 0.65em;
+  padding: 1em 1.5em;
+
+  color: var(--almost-white);
+  font-size: 0.8em;
+  font-family:  var(--body-font);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  border: 2px var(--almost-black) solid;
+  border-radius: 10px;
+
+  background-color: var(--almost-black);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover{
+  color: var(--almost-black);
+  background-color: var(--almost-white);
+}
+
+.btn-login, .btn-register{
+  display: block;
+
+  width: 100%;
+  max-width: 280px;
+
+  margin:auto;
+
+  color: hsl(0, 0%,41%);
+  text-align: center;
+  font-size:0.85em;
+  font-family:  var(--body-font);
+
+}
+
+.btn-register{  
+  padding: 0.8em 0;
+
+  font-size: 0.85em;
+  border-radius: 10px;
+  border: 1.6px hsl(0, 0%, 41%) solid;
+}
+
+@media screen and (min-width: 820px){  
+  .btn-primary{
+    max-width: 135px;
+    width: 100%;
+    text-align: center;
+
+    font-size: 0.9em;
+    margin: calc(1em + 0.4em) 0em;
+  }
+
+  .btn-login, .btn-register{
+    display: block;
+    min-width: 105px;
+  }
+
+  .btn-login:hover, .btn-register:hover {
+    color: var(--almost-black);
+  }
+
+}
 
 
-/*=============== POPULAR ===============*/
+/*=============== ATTRIBUTION ===============*/
 
-
-/* Swiper class */
-
-
-/*=============== VALUE ===============*/
-
-
-/*Rotate icon and add shadows*/
-
-
-/*=============== CONTACT ===============*/
-
-
-/*=============== SUBSCRIBE ===============*/
-
-
-/*=============== FOOTER ===============*/
-
-
-/*=============== SCROLL BAR ===============*/
-
-
-/*=============== SCROLL UP ===============*/
-
-
-/* Show Scroll Up*/
 
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 350px){
+/* Media Queries for Menu*/
+@media screen and (max-width: 819px){
+ 
+  .screen-black{
+    display:none;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    background-color: #202020ad;
+  }
+
+  .header__container{
+    justify-content: space-between; 
+  }
+ 
+  .menu{
+    position: fixed;
+    top: 0;
+    right: -70%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5em;
+
+    width: 62vw;
+    height: 100vh;
+
+    padding: 25px 20px;
+
+    background-color:hsl(0, 0%, 98%);
+    transition: right 0.3s;
+
+    overflow: scroll;
+  }
+
+  .menu__head{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;    
+
+  }
+
+  .closer-icon{
+    width:20px;
+  }
+
+  .menu__main{
+    display: grid;
+    gap: 1.2em;
+
+  }
+
+  .menu__items summary img{
+    margin-left: 6px;
+    transition: transform 0.3s;
+  }
+
+  .menu__colapse{
+    display: grid;
+    gap: 1.6em;
+
+    padding:0 2em;
+    margin-top:2em;
+    font-size: 0.9em;
+  }  
+
 }
 
 /* For medium devices */
-@media screen and (max-width: 576px){
+@media screen and (min-width: 581px){
+  .hero__text{
+    max-width: 550px;
+    margin: auto;
+  }
+  .hero__client > img{
+    width: 72px;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 820px){    
+  
+  .header__container{
+    height: 82px;
+    padding: 0 30px;
+  }
+  
+  .header__marca{
+    margin-right: 3em;
+  }
+
+  .menu-icon{
+    display: none;
+  }
+
+  .menu{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 2em;
+  }
+
+  .menu__head{
+    display: none;
+  }  
+
+  .menu__main{
+    display: flex;
+    gap: 1.8em;
+    align-items: center;
+  }
+
+  .menu__main > .menu__items:hover{
+    cursor:pointer;
+  }
+
+  .menu__items{
+    position: relative;
+  }  
+
+  details{
+    cursor: pointer;
+  }
+  
+  .menu__colapse{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;
+    gap: 1.4em;
+
+    margin-top: 2.4em;
+    padding: 1.6em 1.8em;
+
+    white-space: nowrap;
+    font-weight: 500;
+    
+    border-radius: 7px;
+    background-color: var(--almost-white);
+
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(135,135,135,0.69);
+    -moz-box-shadow: 0px 0px 24px 0px rgba(135,135,135,0.69);
+    box-shadow: 0px 0px 24px 0px rgba(135,135,135,0.69);
+  }
+
+  .menu__items:nth-child(1) .menu__colapse{
+    padding: 1.6em 2.2em;
+  }
+
+  .menu__items:nth-child(2) .menu__colapse{
+    right: -38px;
+  }
+
+  .sing-up{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-top: 0;
+  }
+
+  
+  .hero__container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: stretch;
+    align-items: end;
+    gap: 2.5em;
+
+    height: 80vh;
+    padding: 0 4em;
+  }
+
+  .hero__image{
+    order: 1;
+    height: 430px;   
+    text-align: end;
+  }
+
+  .hero__image picture img{
+    width: 95%;
+    height: 100%;
+
+  }
+
+  .hero__text{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+
+  }
+
 }
 
 /* For large devices */
-@media screen and (max-width: 1023px){    
-}
+@media screen and (min-width: 1100px){    
+  
+  .menu__main{
+    display: flex;    
+    align-items: center;
+  }
 
-/* For 2K & 4K resolutions */
-@media screen and (max-width: 2023px){    
+  .hero__container{
+    gap: 5em;
+   
+    padding: 0 8.5em;
+  }
+
+  .hero__image{    
+    height:495px;
+  }
+
+  .hero__text p{
+    padding-right: 5em;
+  }
+
+  .hero__client{
+    margin-top: 3em;
+  }
+
 }
